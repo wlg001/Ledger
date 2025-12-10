@@ -152,39 +152,41 @@ function App() {
       </div>
 
       <form onSubmit={handleSubmit} className="form">
-        <div className="amount-display">
-          <span className="amount-label">金额：</span>
-          <span className="amount-value">{amount || '0.00'}</span>
-        </div>
-        <div className="platform-selector">
-          <button
-            type="button"
-            onClick={() => setPlatform('拼多多')}
-            className={`platform-button ${platform === '拼多多' ? 'active' : ''}`}
-          >
-            拼多多
-          </button>
-          <button
-            type="button"
-            onClick={() => setPlatform('京东')}
-            className={`platform-button ${platform === '京东' ? 'active' : ''}`}
-          >
-            京东
-          </button>
-          <button
-            type="button"
-            onClick={() => setPlatform('淘宝')}
-            className={`platform-button ${platform === '淘宝' ? 'active' : ''}`}
-          >
-            淘宝
-          </button>
-          <button
-            type="button"
-            onClick={() => setPlatform('其它')}
-            className={`platform-button ${platform === '其它' ? 'active' : ''}`}
-          >
-            其它
-          </button>
+        <div className="amount-platform-container">
+          <div className="amount-display">
+            <span className="amount-label">金额：</span>
+            <span className="amount-value">{amount || '0.00'}</span>
+          </div>
+          <div className="platform-selector">
+            <button
+              type="button"
+              onClick={() => setPlatform('拼多多')}
+              className={`platform-button ${platform === '拼多多' ? 'active' : ''}`}
+            >
+              拼多多
+            </button>
+            <button
+              type="button"
+              onClick={() => setPlatform('京东')}
+              className={`platform-button ${platform === '京东' ? 'active' : ''}`}
+            >
+              京东
+            </button>
+            <button
+              type="button"
+              onClick={() => setPlatform('淘宝')}
+              className={`platform-button ${platform === '淘宝' ? 'active' : ''}`}
+            >
+              淘宝
+            </button>
+            <button
+              type="button"
+              onClick={() => setPlatform('其它')}
+              className={`platform-button ${platform === '其它' ? 'active' : ''}`}
+            >
+              其它
+            </button>
+          </div>
         </div>
       </form>
 

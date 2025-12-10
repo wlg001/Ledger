@@ -194,19 +194,28 @@ h1 {
   transform: scale(0.95);
 }
 
+.amount-platform-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  background: white;
+}
+
 .amount-display {
   display: flex;
   align-items: center;
-  padding: 12px;
-  background: #f9f9f9;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  flex: 1;
+  min-width: 0;
 }
 
 .amount-label {
   font-size: 14px;
-  color: #666;
+  color: #000;
   margin-right: 10px;
+  white-space: nowrap;
 }
 
 .amount-value {
@@ -215,34 +224,38 @@ h1 {
   color: #333;
   flex: 1;
   text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .platform-selector {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .platform-button {
-  padding: 10px;
-  border: 2px solid #ddd;
+  padding: 10px 15px;
+  border: 2px solid #1976d2;
   border-radius: 6px;
-  background: white;
+  background: #e3f2fd;
   cursor: pointer;
   font-size: 14px;
+  color: #000;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .platform-button.active {
-  background: #2196f3;
-  border-color: #2196f3;
-  color: white;
-  font-weight: bold;
+  background: #ffeb3b;
+  border-color: #1976d2;
+  color: #000;
+  font-weight: normal;
 }
 
 .platform-button:not(.active):hover {
-  background: #f5f5f5;
-  border-color: #2196f3;
+  background: #bbdefb;
 }
 
 .number-keyboard {
