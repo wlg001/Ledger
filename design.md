@@ -91,6 +91,13 @@
 
 使用JSON文件（records.json）存储数据，位于后端目录。
 
+## 未来功能规划
+
+### 支付渠道记录
+- 添加支付渠道选择功能：支付宝、微信、其它
+- 用于记录金额流动渠道
+- 在数据模型中添加 `channel` 字段（可选值："alipay"、"wechat"、"other"）
+
 ## 开发说明
 
 - 后端启动：`cd backend && uvicorn main:app --reload`

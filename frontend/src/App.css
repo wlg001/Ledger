@@ -228,30 +228,42 @@ h1 {
 .keyboard-left {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 80px;
+}
+
+.type-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
 }
 
 .type-button {
   padding: 15px 10px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
+  border: none;
+  border-radius: 0;
   background: white;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  position: relative;
+}
+
+.type-button:first-child {
+  border-bottom: 1px solid #eee;
 }
 
 .type-button.active.expense {
   background: #ffebee;
-  border-color: #f44336;
   color: #f44336;
   font-weight: bold;
 }
 
 .type-button.active.income {
   background: #e8f5e9;
-  border-color: #4caf50;
   color: #4caf50;
   font-weight: bold;
 }

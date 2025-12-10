@@ -201,20 +201,22 @@ function App() {
 
       <div className="number-keyboard">
         <div className="keyboard-left">
-          <button
-            type="button"
-            onClick={() => setType('expense')}
-            className={`type-button ${type === 'expense' ? 'active expense' : ''}`}
-          >
-            支出
-          </button>
-          <button
-            type="button"
-            onClick={() => setType('income')}
-            className={`type-button ${type === 'income' ? 'active income' : ''}`}
-          >
-            收入
-          </button>
+          <div className="type-selector">
+            <button
+              type="button"
+              onClick={() => setType('expense')}
+              className={`type-button ${type === 'expense' ? 'active expense' : ''}`}
+            >
+              支出
+            </button>
+            <button
+              type="button"
+              onClick={() => setType('income')}
+              className={`type-button ${type === 'income' ? 'active income' : ''}`}
+            >
+              收入
+            </button>
+          </div>
         </div>
         
         <div className="keyboard-center">
