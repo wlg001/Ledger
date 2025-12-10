@@ -67,5 +67,9 @@
 - 更新App.css，添加expense-categories和expense-item样式
 - 优化交互体验，点击项目自动设置为支出类型并填充说明
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: 68595f06a38edab81982c98c9bf72985d78a92b4
+- 提交信息: "添加消费项目选择功能：预置常用消费项目，点击快速填充表单"
+- 文件变更: 4个文件，97行新增
+- 修改的文件: frontend/src/App.js, frontend/src/App.css, design.md, devlog.md
 
