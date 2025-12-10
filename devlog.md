@@ -126,5 +126,9 @@
 - 添加platform-selector和platform-button样式，使用网格布局，激活状态高亮显示
 - 平台选择为互斥选择，只能选择一个
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: a692b66768e5cd23e163deab17c3a5ea2a1552e7
+- 提交信息: "添加平台选择功能：移除说明框，增加拼多多/京东/淘宝/其它四选一"
+- 文件变更: 4个文件，88行新增，10行删除
+- 修改的文件: frontend/src/App.js, frontend/src/App.css, design.md, devlog.md
 

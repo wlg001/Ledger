@@ -76,10 +76,6 @@ function App() {
     setType('expense');
   };
 
-  const handleSelectPlatform = (platformName) => {
-    setPlatform(platformName);
-  };
-
   const handleNumberInput = (num) => {
     if (num === '.' && amount.includes('.')) return; // 防止多个小数点
     if (num === '.' && amount === '') {
