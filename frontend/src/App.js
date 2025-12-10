@@ -72,6 +72,47 @@ function App() {
     setType('expense');
   };
 
+  const handleNumberInput = (num) => {
+    if (num === '.' && amount.includes('.')) return; // 防止多个小数点
+    if (num === '.' && amount === '') {
+      setAmount('0.');
+      return;
+    }
+    setAmount(amount + num);
+  };
+
+  const handleBackspace = () => {
+    setAmount(amount.slice(0, -1));
+  };
+
+  const handleClear = () => {
+    setAmount('');
+  };
+
+  const handleConfirm = async () => {
+    if (!amount || !description) return;
+
+    try {
+      const response = await fetch('/api/records', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: parseFloat(amount),
+          description,
+          type,
+        }),
+      });
+      const newRecord = await response.json();
+      setRecords([...records, newRecord]);
+      setAmount('');
+      setDescription('');
+    } catch (error) {
+      console.error('创建记录失败:', error);
+    }
+  };
+
   const totalIncome = records
     .filter(r => r.type === 'income')
     .reduce((sum, r) => sum + r.amount, 0);
@@ -104,14 +145,10 @@ function App() {
       </div>
 
       <form onSubmit={handleSubmit} className="form">
-        <input
-          type="number"
-          step="0.01"
-          placeholder="金额"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="input"
-        />
+        <div className="amount-display">
+          <span className="amount-label">金额：</span>
+          <span className="amount-value">{amount || '0.00'}</span>
+        </div>
         <input
           type="text"
           placeholder="说明"
@@ -119,15 +156,6 @@ function App() {
           onChange={(e) => setDescription(e.target.value)}
           className="input"
         />
-        <select
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          className="select"
-        >
-          <option value="expense">支出</option>
-          <option value="income">收入</option>
-        </select>
-        <button type="submit" className="button">添加</button>
       </form>
 
       <div className="records">
@@ -168,6 +196,78 @@ function App() {
               {expense}
             </button>
           ))}
+        </div>
+      </div>
+
+      <div className="number-keyboard">
+        <div className="keyboard-left">
+          <button
+            type="button"
+            onClick={() => setType('expense')}
+            className={`type-button ${type === 'expense' ? 'active expense' : ''}`}
+          >
+            支出
+          </button>
+          <button
+            type="button"
+            onClick={() => setType('income')}
+            className={`type-button ${type === 'income' ? 'active income' : ''}`}
+          >
+            收入
+          </button>
+        </div>
+        
+        <div className="keyboard-center">
+          <div className="number-grid">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+              <button
+                key={num}
+                type="button"
+                onClick={() => handleNumberInput(num.toString())}
+                className="number-key"
+              >
+                {num}
+              </button>
+            ))}
+            <button
+              type="button"
+              onClick={() => handleNumberInput('.')}
+              className="number-key"
+            >
+              .
+            </button>
+            <button
+              type="button"
+              onClick={handleBackspace}
+              className="number-key"
+            >
+              ⌫
+            </button>
+          </div>
+        </div>
+
+        <div className="keyboard-right">
+          <button
+            type="button"
+            onClick={handleBackspace}
+            className="action-button minus"
+          >
+            -
+          </button>
+          <button
+            type="button"
+            onClick={handleClear}
+            className="action-button plus"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            onClick={handleConfirm}
+            className="action-button confirm"
+          >
+            确定
+          </button>
         </div>
       </div>
     </div>

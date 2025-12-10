@@ -194,3 +194,150 @@ h1 {
   transform: scale(0.95);
 }
 
+.amount-display {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.amount-label {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.amount-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  text-align: right;
+}
+
+.number-keyboard {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.keyboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80px;
+}
+
+.type-button {
+  padding: 15px 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.type-button.active.expense {
+  background: #ffebee;
+  border-color: #f44336;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.type-button.active.income {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.type-button:not(.active):hover {
+  background: #f5f5f5;
+}
+
+.keyboard-center {
+  flex: 1;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.number-key {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.number-key:hover {
+  background: #f5f5f5;
+  border-color: #2196f3;
+}
+
+.number-key:active {
+  transform: scale(0.95);
+  background: #e3f2fd;
+}
+
+.keyboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80px;
+}
+
+.action-button {
+  padding: 15px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.action-button.minus {
+  background: #ff9800;
+  color: white;
+}
+
+.action-button.minus:hover {
+  background: #f57c00;
+}
+
+.action-button.plus {
+  background: #4caf50;
+  color: white;
+}
+
+.action-button.plus:hover {
+  background: #388e3c;
+}
+
+.action-button.confirm {
+  background: #2196f3;
+  color: white;
+  flex: 1;
+}
+
+.action-button.confirm:hover {
+  background: #1976d2;
+}
+
+.action-button:active {
+  transform: scale(0.95);
+}
+
