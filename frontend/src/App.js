@@ -6,6 +6,7 @@ function App() {
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState('expense');
+  const [platform, setPlatform] = useState('其它');
 
   // 预置常用消费项目
   const commonExpenses = [
@@ -35,6 +36,9 @@ function App() {
     e.preventDefault();
     if (!amount || !description) return;
 
+    // 将平台信息添加到说明中
+    const fullDescription = platform !== '其它' ? `${platform} - ${description}` : description;
+
     try {
       const response = await fetch('/api/records', {
         method: 'POST',
@@ -43,7 +47,7 @@ function App() {
         },
         body: JSON.stringify({
           amount: parseFloat(amount),
-          description,
+          description: fullDescription,
           type,
         }),
       });
@@ -72,6 +76,10 @@ function App() {
     setType('expense');
   };
 
+  const handleSelectPlatform = (platformName) => {
+    setPlatform(platformName);
+  };
+
   const handleNumberInput = (num) => {
     if (num === '.' && amount.includes('.')) return; // 防止多个小数点
     if (num === '.' && amount === '') {
@@ -92,6 +100,9 @@ function App() {
   const handleConfirm = async () => {
     if (!amount || !description) return;
 
+    // 将平台信息添加到说明中
+    const fullDescription = platform !== '其它' ? `${platform} - ${description}` : description;
+
     try {
       const response = await fetch('/api/records', {
         method: 'POST',
@@ -100,7 +111,7 @@ function App() {
         },
         body: JSON.stringify({
           amount: parseFloat(amount),
-          description,
+          description: fullDescription,
           type,
         }),
       });
@@ -149,13 +160,36 @@ function App() {
           <span className="amount-label">金额：</span>
           <span className="amount-value">{amount || '0.00'}</span>
         </div>
-        <input
-          type="text"
-          placeholder="说明"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="input"
-        />
+        <div className="platform-selector">
+          <button
+            type="button"
+            onClick={() => setPlatform('拼多多')}
+            className={`platform-button ${platform === '拼多多' ? 'active' : ''}`}
+          >
+            拼多多
+          </button>
+          <button
+            type="button"
+            onClick={() => setPlatform('京东')}
+            className={`platform-button ${platform === '京东' ? 'active' : ''}`}
+          >
+            京东
+          </button>
+          <button
+            type="button"
+            onClick={() => setPlatform('淘宝')}
+            className={`platform-button ${platform === '淘宝' ? 'active' : ''}`}
+          >
+            淘宝
+          </button>
+          <button
+            type="button"
+            onClick={() => setPlatform('其它')}
+            className={`platform-button ${platform === '其它' ? 'active' : ''}`}
+          >
+            其它
+          </button>
+        </div>
       </form>
 
       <div className="records">
