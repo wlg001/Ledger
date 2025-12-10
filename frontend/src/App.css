@@ -204,6 +204,13 @@ h1 {
   color: #2196f3;
 }
 
+.expense-item.active {
+  background: #ffeb3b;
+  border-color: #1976d2;
+  color: #000;
+  font-weight: bold;
+}
+
 .expense-item:active {
   transform: scale(0.95);
 }

@@ -7,6 +7,7 @@ function App() {
   const [description, setDescription] = useState('');
   const [type, setType] = useState('expense');
   const [platform, setPlatform] = useState('其它');
+  const [selectedExpense, setSelectedExpense] = useState(null);
 
   // 预置常用消费项目
   const commonExpenses = [
@@ -55,6 +56,7 @@ function App() {
       setRecords([...records, newRecord]);
       setAmount('');
       setDescription('');
+      setSelectedExpense(null);
     } catch (error) {
       console.error('创建记录失败:', error);
     }
@@ -74,6 +76,7 @@ function App() {
   const handleSelectExpense = (expense) => {
     setDescription(expense);
     setType('expense');
+    setSelectedExpense(expense);
   };
 
   const handleNumberInput = (num) => {
@@ -115,6 +118,7 @@ function App() {
       setRecords([...records, newRecord]);
       setAmount('');
       setDescription('');
+      setSelectedExpense(null);
     } catch (error) {
       console.error('创建记录失败:', error);
     }
@@ -226,7 +230,7 @@ function App() {
               key={expense}
               type="button"
               onClick={() => handleSelectExpense(expense)}
-              className="expense-item"
+              className={`expense-item ${selectedExpense === expense ? 'active' : ''}`}
             >
               {expense}
             </button>
