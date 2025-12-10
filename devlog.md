@@ -241,5 +241,9 @@
 - 移除项目按钮的圆角（border-radius改为0），使项目紧密排列
 - 确保项目之间没有额外间距，显示更紧凑
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: 1923ba767782b2c4fb57caf6b9f8f656ea42f615
+- 提交信息: "优化消费项目显示：移除标题，消除项目间隙"
+- 文件变更: 3个文件，17行新增，3行删除
+- 修改的文件: frontend/src/App.js, frontend/src/App.css, devlog.md
 
