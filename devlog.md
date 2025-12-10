@@ -48,5 +48,9 @@
 - 在backend目录下创建Python虚拟环境（venv）
 - 更新README.md，添加虚拟环境的创建和激活说明
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: cbdd84a3307dd4e1494e081ea4425aed45c45a7a
+- 提交信息: "创建后端虚拟环境并更新文档"
+- 文件变更: 2个文件，24行新增
+- 修改的文件: README.md, devlog.md
 
