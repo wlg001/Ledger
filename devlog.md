@@ -165,5 +165,9 @@
 - 右侧平台选择居右对齐
 - 优化form容器样式，移除flex-wrap，确保单行显示
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: a4f98bbf8f0b2e23ede201db61afab169a862c7b
+- 提交信息: "调整金额输入区布局：三栏布局，左金额右平台，中间留空给数字输入"
+- 文件变更: 3个文件，46行新增，11行删除
+- 修改的文件: frontend/src/App.js, frontend/src/App.css, devlog.md
 
