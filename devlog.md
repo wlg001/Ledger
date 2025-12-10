@@ -106,5 +106,9 @@
 - 移除按钮之间的间距，使用边框连接，形成单选按钮组的效果
 - 在design.md中记录未来功能规划：支付渠道记录（支付宝、微信、其它）
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: b6fc424aaa4ed7bba77002b7b9c9dfc52ed99972
+- 提交信息: "优化支出/收入选择UI，记录支付渠道功能规划"
+- 文件变更: 4个文件，53行新增，19行删除
+- 修改的文件: frontend/src/App.js, frontend/src/App.css, design.md, devlog.md
 
