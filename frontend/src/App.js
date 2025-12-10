@@ -7,6 +7,16 @@ function App() {
   const [description, setDescription] = useState('');
   const [type, setType] = useState('expense');
 
+  // 预置常用消费项目
+  const commonExpenses = [
+    '早餐', '午餐', '晚餐', '零食',
+    '公交', '地铁', '打车', '加油',
+    '日用品', '衣服', '电子产品',
+    '电影', '游戏', 'KTV',
+    '看病', '买药',
+    '培训', '书籍'
+  ];
+
   useEffect(() => {
     fetchRecords();
   }, []);
@@ -55,6 +65,11 @@ function App() {
     } catch (error) {
       console.error('删除记录失败:', error);
     }
+  };
+
+  const handleSelectExpense = (expense) => {
+    setDescription(expense);
+    setType('expense');
   };
 
   const totalIncome = records
@@ -138,6 +153,22 @@ function App() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="expense-categories">
+        <h3>常用消费</h3>
+        <div className="expense-grid">
+          {commonExpenses.map(expense => (
+            <button
+              key={expense}
+              type="button"
+              onClick={() => handleSelectExpense(expense)}
+              className="expense-item"
+            >
+              {expense}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
