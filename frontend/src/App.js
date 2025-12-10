@@ -223,7 +223,6 @@ function App() {
       </div>
 
       <div className="expense-categories">
-        <h3>常用消费</h3>
         <div className="expense-grid">
           {commonExpenses.map(expense => (
             <button
