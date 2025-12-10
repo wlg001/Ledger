@@ -13,7 +13,19 @@
 
 ```bash
 cd backend
+# 创建虚拟环境（如果还没有创建）
+python3 -m venv venv
+
+# 激活虚拟环境
+# Linux/Mac:
+source venv/bin/activate
+# Windows:
+# venv\Scripts\activate
+
+# 安装依赖
 pip install -r requirements.txt
+
+# 启动服务
 uvicorn main:app --reload
 ```
 
