@@ -17,5 +17,9 @@
 - 创建design.md设计文档
 - 创建devlog.md开发日志
 
-**Git信息**: 待提交
+**Git信息**: 
+- Commit: 276066c0948a8bd3697375664406272c22bd033d
+- 提交信息: "初始项目创建：实现前后端分离的记账应用"
+- 文件变更: 11个文件，606行新增
+- 创建的文件: .gitignore, backend/main.py, backend/requirements.txt, design.md, devlog.md, frontend/package.json, frontend/public/index.html, frontend/src/App.css, frontend/src/App.js, frontend/src/index.css, frontend/src/index.js
 
