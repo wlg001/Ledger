@@ -247,3 +247,20 @@
 - 文件变更: 3个文件，17行新增，3行删除
 - 修改的文件: frontend/src/App.js, frontend/src/App.css, devlog.md
 
+---
+
+### 推送代码到GitHub
+
+**提示词**: 提交到我个github
+
+**代码修改总结**:
+- 添加GitHub远程仓库：git@github.com:wlg001/Ledger.git
+- 将本地分支重命名为main
+- 推送所有代码到GitHub远程仓库
+- 设置main分支跟踪origin/main
+
+**Git信息**: 
+- 远程仓库: git@github.com:wlg001/Ledger.git
+- 分支: main
+- 推送状态: 成功
+
