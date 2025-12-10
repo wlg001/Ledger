@@ -194,28 +194,28 @@ function App() {
       </form>
 
       <div className="records">
-        {records.map(record => (
-          <div key={record.id} className="record">
-            <div className="record-info">
+        {records
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .slice(0, 3)
+          .map(record => (
+            <div key={record.id} className="record">
               <span className={`record-type ${record.type}`}>
                 {record.type === 'income' ? '收入' : '支出'}
               </span>
               <span className="record-description">{record.description}</span>
-              <span className={`record-amount ${record.type}`}>
-                {record.type === 'income' ? '+' : '-'}{record.amount.toFixed(2)}
+              <span className="record-right">
+                <span className="record-date-amount">
+                  {record.date} {record.type === 'income' ? '+' : '-'}{record.amount.toFixed(2)}
+                </span>
+                <button
+                  onClick={() => handleDelete(record.id)}
+                  className="delete-button"
+                >
+                  删除
+                </button>
               </span>
             </div>
-            <div className="record-meta">
-              <span className="record-date">{record.date}</span>
-              <button
-                onClick={() => handleDelete(record.id)}
-                className="delete-button"
-              >
-                删除
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       <div className="expense-categories">
