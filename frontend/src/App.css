@@ -47,10 +47,8 @@ h1 {
 }
 
 .form {
-  display: flex;
-  gap: 10px;
+  width: 100%;
   margin-bottom: 20px;
-  flex-wrap: wrap;
 }
 
 .input,
@@ -197,18 +195,19 @@ h1 {
 .amount-platform-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  width: 100%;
   padding: 12px;
   border: 2px solid #1976d2;
   border-radius: 8px;
   background: white;
+  gap: 10px;
 }
 
-.amount-display {
+.amount-display-left {
   display: flex;
   align-items: center;
-  flex: 1;
-  min-width: 0;
+  flex-shrink: 0;
+  justify-content: flex-start;
 }
 
 .amount-label {
@@ -222,17 +221,34 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   color: #333;
-  flex: 1;
-  text-align: right;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.platform-selector {
+.amount-input-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0 10px;
+}
+
+.amount-display-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-selector-right {
   display: flex;
   gap: 8px;
   flex-shrink: 0;
+  justify-content: flex-end;
 }
 
 .platform-button {

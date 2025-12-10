@@ -153,11 +153,14 @@ function App() {
 
       <form onSubmit={handleSubmit} className="form">
         <div className="amount-platform-container">
-          <div className="amount-display">
+          <div className="amount-display-left">
             <span className="amount-label">金额：</span>
             <span className="amount-value">{amount || '0.00'}</span>
           </div>
-          <div className="platform-selector">
+          <div className="amount-input-center">
+            <span className="amount-display-text">{amount || '0.00'}</span>
+          </div>
+          <div className="platform-selector-right">
             <button
               type="button"
               onClick={() => setPlatform('拼多多')}
